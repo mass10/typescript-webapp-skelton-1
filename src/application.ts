@@ -18,7 +18,7 @@ export class MyApplication {
 	/**
 	 * アプリケーションを起動します。
 	 */
-	public run(): void {
+	public run(server: string = "0.0.0.0", port: number = 80): void {
 
 		const app = express();
 
@@ -31,6 +31,6 @@ export class MyApplication {
 		app.get("/account", account.get);
 		app.get("/dashboard", dashboard.get);
 
-		app.listen(8081, "127.0.0.1");
+		app.listen(port, server);
 	}
 }
