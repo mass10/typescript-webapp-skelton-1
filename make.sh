@@ -1,4 +1,13 @@
 #!/bin/bash
-rm -fr dist/*
-yarn tsc
 
+#
+# erase
+#
+if [ -e ./dist ]; then
+	rm -fr dist/*
+fi
+
+#
+# build
+#
+yarn tsc
