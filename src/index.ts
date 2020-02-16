@@ -5,14 +5,25 @@ import { MyApplication } from './application';
  */
 module Main {
 
+	/**
+	 * キーと値を保持する連想配列のクラスです。
+	 */
 	type IArgumentMapCore = {
 		[key: string]: string | boolean | undefined
 	};
 
+	/**
+	 * コマンドライン引数を保存するクラスです。
+	 */
 	class ArgumentMap {
 
 		private _core: IArgumentMapCore = {};
 
+		/**
+		 * 数値にして値を取り出します。
+		 * key が存在しない場合は undefined を返します。
+		 * @param key 
+		 */
 		public getNumber(key: string): number | undefined {
 
 			const unknown = this._core[key];
@@ -30,6 +41,11 @@ module Main {
 			}
 		}
 
+		/**
+		 * 値を文字列で取り出します。
+		 * key が存在しない場合は undefined を返します。
+		 * @param key 
+		 */
 		public getString(key: string): string | undefined {
 
 			const unknown = this._core[key];
@@ -40,12 +56,20 @@ module Main {
 			return unknown;
 		}
 
+		/**
+		 * キーと値を保存します。
+		 * @param key 
+		 * @param value 
+		 */
 		public set(key: string, value: any): void {
 
 			this._core[key] = value;
 		}
 	}
 
+	/**
+	 * コマンドライン引数を読み取ります。
+	 */
 	function readArgs(): ArgumentMap {
 
 		const args = new ArgumentMap();
