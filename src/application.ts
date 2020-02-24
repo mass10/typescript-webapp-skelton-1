@@ -26,7 +26,7 @@ export class MyApplication {
 
 		app.use("/static", express.static("public"));
 
-		
+
 		app.get("/", root.get);
 		app.get("/account", account.get);
 		app.get("/dashboard", dashboard.get);
