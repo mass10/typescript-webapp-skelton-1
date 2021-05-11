@@ -1,6 +1,6 @@
 # About
 
-- HTTP server example of Express.
+- HTTP server example of Express. (created at 2020-02-15)
 
 
 # How to create
